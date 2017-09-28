@@ -10,7 +10,7 @@ setup(
     license='MIT',
     author='Jeong Ukjae',
     author_email='jeongukjae@gmail.com',
-    description='Flask extension that helps authentification using JWT',
+    description='Flask extension that helps authentication using JWT',
     packages=find_packages(exclude=['tests']),
     long_description=open('README.md').read(),
     zip_safe=False,
