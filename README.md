@@ -1,6 +1,6 @@
 # Flask-JWT-Login
 
-[![Build Status](https://travis-ci.org/JeongUkJae/Flask-JWT-Login.svg?branch=master)](https://travis-ci.org/JeongUkJae/Flask-JWT-Login) [![Coverage Status](https://coveralls.io/repos/github/JeongUkJae/Flask-JWT-Login/badge.svg?branch=master)](https://coveralls.io/github/JeongUkJae/Flask-JWT-Login?branch=master)
+[![Build Status](https://travis-ci.org/JeongUkJae/Flask-JWT-Login.svg?branch=master)](https://travis-ci.org/JeongUkJae/Flask-JWT-Login) [![Coverage Status](https://coveralls.io/repos/github/JeongUkJae/Flask-JWT-Login/badge.svg?branch=master)](https://coveralls.io/github/JeongUkJae/Flask-JWT-Login?branch=master) [![PyPI](https://img.shields.io/pypi/v/Flask-JWT-Login.svg)]()
 
 Flask extension that helps authentication using JWT(Json Web Token)
 
@@ -8,7 +8,7 @@ Flask extension that helps authentication using JWT(Json Web Token)
 
 ### How to initiate
 
-```Python3
+```Python
 from flask import Flask
 from flask_jwt_login import JWT
 
@@ -20,7 +20,7 @@ jwt = JWT(app)			# initialize flask_jwt_login
 
 **app.py**
 
-```Python3
+```Python
 from flask import Flask
 
 app = Flask(__name__)
@@ -29,7 +29,7 @@ app.config.from_object('config.Config')
 
 **config.py**
 
-```Python3
+```Python
 class Config(object):
     SECRET_KEY = 'random secret key for development'
     HASH_ALGORITHM = 'HS512' 
@@ -49,7 +49,7 @@ Refer [this link (PyJWT Documentation - Digital Signature Algorithms)](http://py
 
 **authentication handler**
 
-```Python3
+```Python
 ...
 ...
 
@@ -80,7 +80,7 @@ def authentication_handler(id, pw):
 
 **process login**
 
-```Python3
+```Python
 from flask_jwt_login import process_login
 
 @app.route('/some_url')
@@ -97,7 +97,7 @@ def some_function():
 
 **login required & get current user**
 
-```Python3
+```Python
 # this url is only accessed by users who have a valid token.
 @app.route("/protected")
 @login_required
