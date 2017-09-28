@@ -1,0 +1,13 @@
+sudo: false
+language: python
+python:
+  - "3.6"
+
+install: 
+  - pip install coveralls
+
+script:
+  - coverage run --source=flask_jwt_login setup.py test
+
+after_success:
+  - coveralls
