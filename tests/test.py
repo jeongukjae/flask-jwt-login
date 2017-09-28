@@ -27,6 +27,18 @@ class UserTestCase(unittest.TestCase):
         # check there is a sign in token in response header
         assert 'token=' in rv.headers['Set-Cookie']
 
+    def test_login_failed(self):
+        id = 'idtest1'
+        pw = 'pw'
+
+        rv = self.app.post('/login', data={
+            'id' : id,
+            'pw' : pw
+        })
+
+        # result
+        assert 'Error!' in rv.data.decode('utf8')
+
     def test_protected(self):
         # test token
         token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpZCI6ImlkdGVzdDEiLCJwdyI6InB3dGVzdDEiLCJuYW1lIjoibmFtZXRlc3QxIn0._Zo-M9TPOJzzvp0paGR7_19_L-492UXAO6MenQr3PfGW5N0QYWPxv7hJK1uav25fDv1hybfJ0-sO_swfhVBd9w'
@@ -38,9 +50,16 @@ class UserTestCase(unittest.TestCase):
 
         assert 'Protected Page' in rv.data.decode('utf8')
 
+    def test_protected_failed(self):
         # check protected page with fake_token
         rv = self.app.get('/protected', headers={
             'Cookie': 'token=fake_token'
+        })
+
+        assert 'Protected Page' not in rv.data.decode('utf8')
+
+        # check protected page with empty token
+        rv = self.app.get('/protected', headers={
         })
 
         assert 'Protected Page' not in rv.data.decode('utf8')
