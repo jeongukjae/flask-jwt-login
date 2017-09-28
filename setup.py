@@ -1,8 +1,5 @@
 from setuptools import setup, find_packages
 
-with open('requirements.txt') as f:
-    requirements = f.read().splitlines()
-
 setup(
     name='Flask-JWT-Login',
     version='0.0.1',
@@ -16,6 +13,14 @@ setup(
     zip_safe=False,
     test_suite='nose.collector',
     include_package_data=True,
-    install_requires=requirements,
+    install_requires=[
+        'click==6.7',
+        'Flask==0.12.2',
+        'itsdangerous==0.24',
+        'Jinja2==2.9.6',
+        'MarkupSafe==1.0',
+        'PyJWT==1.5.3',
+        'Werkzeug==0.12.2'
+    ],
     tests_require=['nose'],
 )
