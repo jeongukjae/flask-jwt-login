@@ -1,0 +1,5 @@
+/env/
+__pycache__
+.vscode
+.eggs
+Flask_JWT_Login.egg-info
