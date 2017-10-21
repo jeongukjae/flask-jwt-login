@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='Flask-JWT-Login',
-    version='0.0.3',
+    version='0.0.4',
     url='https://github.com/JeongUkJae/Flask-JWT-Login',
     license='MIT',
     author='Jeong Ukjae',
