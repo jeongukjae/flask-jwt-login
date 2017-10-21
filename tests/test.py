@@ -56,13 +56,15 @@ class UserTestCase(unittest.TestCase):
             'Cookie': 'token=fake_token'
         })
 
-        assert 'Protected Page' not in rv.data.decode('utf8')
+        # unauthorized access
+        assert rv.status_code == 501
 
         # check protected page with empty token
         rv = self.app.get('/protected', headers={
         })
 
-        assert 'Protected Page' not in rv.data.decode('utf8')
+        # unauthorized access
+        assert rv.status_code == 501
 
 if __name__ == '__main__':
     unittest.main()

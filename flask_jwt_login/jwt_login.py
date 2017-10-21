@@ -49,7 +49,7 @@ def login_required(func):
 		# token does not exist
 		if token is None:
 			if jwt_login.unauthorized is None:
-				return abort(400)
+				abort(501)
 			return jwt_login.unauthorized()
 
 		try:
@@ -58,7 +58,7 @@ def login_required(func):
 				algorithms=[current_app.config['HASH_ALGORITHM']])
 		except jwt.exceptions.DecodeError:
 			if jwt_login.unauthorized is None:
-				return abort(400)
+				abort(501)
 			return jwt_login.unauthorized()
 		# identity_handler does not exist
 		return func(*args, **kwargs)

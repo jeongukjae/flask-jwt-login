@@ -1,5 +1,5 @@
 # -*- coding : utf8 -*-
-from flask import Flask, redirect, request, make_response
+from flask import Flask, redirect, request, make_response, abort
 from flask_jwt_login import JWT, login_required, get_current_user, process_login
 
 # add token name
@@ -36,6 +36,14 @@ def authentication_handler(id, pw):
 
 	# if there is no matching user, returns None
 	return None
+
+@jwt.unauthorized_handler
+def unauthorized_handler():
+	abort(501)
+
+@app.errorhandler(501)
+def unauthorized(e):
+	return 'Unauthorized Access', 501
 
 @app.route("/")
 def main():

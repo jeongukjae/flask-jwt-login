@@ -19,8 +19,10 @@ def process_login(id, pw):
 	return token
 
 # get user info from request
-def get_current_user():
-	token = request.cookies.get(current_app.config["JWT_COOKIE_NAME"])
+def get_current_user(token=None):
+	if token is None:
+		token = request.cookies.get(current_app.config["JWT_COOKIE_NAME"])
+
 	if token is not None:
 		try:
 			jwt_token = jwt.decode(token, \
