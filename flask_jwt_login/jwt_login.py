@@ -60,7 +60,7 @@ def login_required(func):
 			if jwt_login.unauthorized is None:
 				abort(501)
 			return jwt_login.unauthorized()
-		# identity_handler does not exist
+
 		return func(*args, **kwargs)
 
 	return decorator

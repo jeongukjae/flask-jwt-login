@@ -93,6 +93,15 @@ def some_function():
 	return response
 ```
 
+**unauthorized handler**
+
+```Python
+@jwt.unauthorized_handler
+def unauthorized_handler():
+	# if authentication failed, this handler will be performed
+	return 'Unauthorized Access', 501
+```
+
 ### Protected Page & User Information
 
 **login required & get current user**
