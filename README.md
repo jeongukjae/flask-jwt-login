@@ -1,6 +1,6 @@
 # Flask-JWT-Login
 
-[![Build Status](https://travis-ci.org/JeongUkJae/Flask-JWT-Login.svg?branch=master)](https://travis-ci.org/JeongUkJae/Flask-JWT-Login) [![Coverage Status](https://coveralls.io/repos/github/JeongUkJae/Flask-JWT-Login/badge.svg?branch=master)](https://coveralls.io/github/JeongUkJae/Flask-JWT-Login?branch=master) [![PyPI](https://img.shields.io/pypi/v/Flask-JWT-Login.svg)]()
+[![Build Status](https://travis-ci.org/JeongUkJae/Flask-JWT-Login.svg?branch=master)](https://travis-ci.org/JeongUkJae/Flask-JWT-Login) [![Coverage Status](https://coveralls.io/repos/github/JeongUkJae/Flask-JWT-Login/badge.svg?branch=master)](https://coveralls.io/github/JeongUkJae/Flask-JWT-Login?branch=master) [![PyPI](https://img.shields.io/pypi/v/Flask-JWT-Login.svg)](https://pypi.org/project/Flask-JWT-Login/)
 
 Flask extension that helps authentication using JWT(Json Web Token)
 
