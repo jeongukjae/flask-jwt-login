@@ -1,8 +1,14 @@
+from codecs import open
 from setuptools import setup, find_packages
 
+with open('flask_jwt_login/__init__.py', encoding='utf-8') as f:
+    for line in f.readlines():
+        if '__version__' in line:
+            version = line.split("'")[1]
+
 setup(
-    name='Flask-JWT-Login',
-    version='0.0.4',
+    name='flask-jwt-login',
+    version='0.0.5',
     url='https://github.com/JeongUkJae/Flask-JWT-Login',
     license='MIT',
     author='Jeong Ukjae',
