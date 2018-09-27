@@ -13,13 +13,8 @@ setup(
     test_suite='nose.collector',
     include_package_data=True,
     install_requires=[
-        'click==6.7',
-        'Flask==0.12.2',
-        'itsdangerous==0.24',
-        'Jinja2==2.9.6',
-        'MarkupSafe==1.0',
-        'PyJWT==1.5.3',
-        'Werkzeug==0.12.2'
+        'Flask==1.0.2',
+        'PyJWT==1.6.4',
     ],
     tests_require=['nose'],
 )
